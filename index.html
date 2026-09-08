@@ -4,11 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Lili Freese</title>
-  <link rel="icon" href="logo.png" type="image/png">
 
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
 
+  <!-- Font Awesome for social icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <style>
@@ -74,7 +75,7 @@
 
     .socials a{
       color:white;
-      font-size:22px;
+      font-size:22px; /* larger for icons */
       opacity:.8;
       transition:.3s;
     }
@@ -97,8 +98,10 @@
 <section class="hero">
   <div class="hero-content">
     <h1>LILI FREESE</h1>
+    <link rel="icon" href="logo.png" type="image/png">
 
-    <a href="work.html" class="enter-btn" id="enterBtn">ENTER</a>
+    <!-- ENTER BUTTON -->
+    <a href="photography.html" class="enter-btn" id="enterBtn">ENTER</a>
 
     <div class="socials">
       <a href="https://instagram.com/lilifreesephoto" target="_blank"><i class="fab fa-instagram"></i></a>
@@ -108,25 +111,28 @@
   </div>
 </section>
 
+<!-- ENTER KEY SCRIPT -->
 <script>
-  function goToWork() {
+  function About() {
     document.body.classList.add("fade-out");
     setTimeout(() => {
-      window.location.href = "work.html";
+      window.location.href = "about.html";
     }, 400);
   }
 
+  // Click ENTER button
   document.getElementById("enterBtn").addEventListener("click", function(e) {
     e.preventDefault();
-    goToWork();
+    goToAbout();
   });
 
+  // Press Enter key
   document.addEventListener("keydown", function(e) {
     const tag = document.activeElement.tagName.toLowerCase();
     const typing = tag === "input" || tag === "textarea";
 
     if (e.key === "Enter" && !typing) {
-      goToWork();
+      goToAbout();
     }
   });
 </script>
