@@ -1,21 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Lili Freese - About</title>
+
     <link rel="icon" href="logo.png" type="image/png">
 
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=Oswald:wght@500;600&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=Oswald:wght@500;600&display=swap"
+          rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
@@ -23,18 +36,29 @@
             background: #000;
             color: #fff;
             min-height: 100vh;
-            display: flex;
-            flex-direction: column;
         }
 
+        /* =========================
+           HEADER
+        ========================= */
+
         header {
-            position: relative;
+            position: sticky;
+            top: 0;
+
+            width: 100%;
+
             display: flex;
             justify-content: space-between;
             align-items: center;
+
             height: 80px;
+
             padding: 0 50px;
+
             background: #000;
+            border-bottom: 1px solid #151515;
+
             z-index: 1000;
         }
 
@@ -49,12 +73,18 @@
         .nav-right a {
             font-family: 'DM Sans', sans-serif;
             font-weight: 500;
+
             font-size: 16px;
             letter-spacing: 1px;
+
             color: #fff;
             text-decoration: none;
+
             padding-bottom: 3px;
-            transition: opacity 0.3s, border-bottom 0.3s;
+
+            transition:
+                    opacity 0.3s ease,
+                    border-bottom 0.3s ease;
         }
 
         .nav-left a.active {
@@ -63,93 +93,87 @@
 
         .nav-left a:hover,
         .nav-right a:hover {
-            opacity: 0.7;
+            opacity: 0.55;
         }
+
+        /* =========================
+           CENTER LOGO
+        ========================= */
 
         .logo {
             position: absolute;
+
             left: 50%;
+
             transform: translateX(-50%);
+
             font-family: 'Oswald', sans-serif;
             font-weight: 600;
-            letter-spacing: 2px;
+
             font-size: 20px;
-            text-align: center;
+            letter-spacing: 2px;
+
             white-space: nowrap;
         }
 
         .nav-right a i {
             font-size: 18px;
-            color: #fff;
-            transition: opacity 0.3s;
         }
 
-        .nav-right a i:hover {
-            opacity: 0.7;
-        }
-
-        @media(max-width: 800px) {
-            header {
-                flex-direction: column;
-                height: auto;
-                gap: 10px;
-                padding: 10px 20px;
-            }
-
-            .logo {
-                position: static;
-                transform: none;
-                font-size: 18px;
-            }
-
-            .nav-left,
-            .nav-right {
-                justify-content: center;
-                gap: 15px;
-            }
-        }
+        /* =========================
+           ABOUT
+        ========================= */
 
         main.about-container {
-            flex: 1;
+            min-height: calc(100vh - 80px);
+
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 50px 20px;
+
+            padding: 80px 30px;
         }
 
         .about-inner {
-            display: flex;
-            gap: 50px;
-            max-width: 1200px;
             width: 100%;
-            align-items: flex-start;
+            max-width: 1200px;
+
+            display: flex;
+            align-items: center;
+
+            gap: 60px;
         }
 
         .about-photo {
             width: 400px;
             height: 400px;
+
             object-fit: cover;
+
             border-radius: 6px;
+
             flex-shrink: 0;
         }
 
         .about-text {
-            max-width: 600px;
+            max-width: 620px;
         }
 
-        .about-text h2 {
+        .about-text h1 {
             font-family: 'Oswald', sans-serif;
             font-weight: 600;
+
             font-size: 32px;
-            margin-bottom: 20px;
+            letter-spacing: 1px;
+
+            margin-bottom: 25px;
         }
 
         .about-text p {
-            font-family: 'DM Sans', sans-serif;
-            font-weight: 400;
-            font-size: 18px;
-            line-height: 1.7;
-            margin-bottom: 15px;
+            font-size: 17px;
+            line-height: 1.75;
+
+            margin-bottom: 18px;
         }
 
         .about-text a {
@@ -158,14 +182,84 @@
         }
 
         .about-text a:hover {
-            opacity: 0.7;
+            opacity: 0.65;
         }
 
-        @media(max-width: 1000px) {
+        /* =========================
+           TABLET
+        ========================= */
+
+        @media (max-width: 1000px) {
+
+            main.about-container {
+                padding: 70px 30px;
+            }
+
+            .about-inner {
+                gap: 45px;
+            }
+
+            .about-photo {
+                width: 330px;
+                height: 330px;
+            }
+
+        }
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 800px) {
+
+            header {
+                height: auto;
+
+                padding: 18px 20px;
+
+                flex-wrap: wrap;
+
+                gap: 18px;
+            }
+
+            .logo {
+                position: static;
+
+                transform: none;
+
+                order: -1;
+
+                width: 100%;
+
+                text-align: center;
+
+                font-size: 18px;
+            }
+
+            .nav-left,
+            .nav-right {
+                gap: 15px;
+            }
+
+            .nav-left a,
+            .nav-right a {
+                font-size: 13px;
+            }
+
+            main.about-container {
+                min-height: auto;
+
+                padding: 60px 6%;
+            }
+
             .about-inner {
                 flex-direction: column;
+
                 align-items: center;
+
                 text-align: center;
+
+                gap: 40px;
             }
 
             .about-photo {
@@ -176,7 +270,40 @@
             .about-text {
                 max-width: 100%;
             }
+
+            .about-text h1 {
+                font-size: 28px;
+            }
+
+            .about-text p {
+                font-size: 15px;
+                line-height: 1.7;
+            }
+
         }
+
+        @media (max-width: 500px) {
+
+            .nav-left {
+                gap: 11px;
+            }
+
+            .nav-right {
+                gap: 12px;
+            }
+
+            .nav-left a,
+            .nav-right a {
+                font-size: 11px;
+            }
+
+            .about-photo {
+                width: 260px;
+                height: 260px;
+            }
+
+        }
+
     </style>
 </head>
 
@@ -184,33 +311,52 @@
 
 <header>
 
-    <div class="nav-left">
-        <a href="index.html">Welcome</a>
-        <a href="work.html">Work</a>
-        <a href="about.html" class="active">About</a>
-    </div>
+    <nav class="nav-left">
+
+        <a href="index.html">
+            Welcome
+        </a>
+
+        <a href="photography.html">
+            Photography
+        </a>
+
+        <a href="projects.html">
+            Projects
+        </a>
+
+        <a href="about.html" class="active">
+            About
+        </a>
+
+    </nav>
 
     <div class="logo">
         LILI FREESE
     </div>
 
-    <div class="nav-right">
+    <nav class="nav-right">
+
         <a href="https://instagram.com/lilifreesephoto"
            target="_blank"
-           rel="noopener noreferrer">
+           rel="noopener noreferrer"
+           aria-label="Instagram">
             <i class="fab fa-instagram"></i>
         </a>
 
         <a href="https://linkedin.com/in/lilifreese"
            target="_blank"
-           rel="noopener noreferrer">
+           rel="noopener noreferrer"
+           aria-label="LinkedIn">
             <i class="fab fa-linkedin"></i>
         </a>
 
-        <a href="mailto:lilifreese@gmail.com">
+        <a href="mailto:lilifreese@gmail.com"
+           aria-label="Email">
             <i class="fas fa-envelope"></i>
         </a>
-    </div>
+
+    </nav>
 
 </header>
 
@@ -224,9 +370,9 @@
 
         <div class="about-text">
 
-            <h2>
+            <h1>
                 PHOTOGRAPHY AND CREATIVE WORK
-            </h2>
+            </h1>
 
             <p>
                 I'm a second-year Computer Engineering student at the University
@@ -245,9 +391,12 @@
 
             <p>
                 At UD, I'm the Website Manager and a member of the Visuals Team
-                for <a href="https://www.udreview.com"
-                       target="_blank"
-                       rel="noopener noreferrer"><em>The Review</em></a>,
+                for
+                <a href="https://www.udreview.com"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    <em>The Review</em>
+                </a>,
                 a manager for Blue Hen Esports, and the VP of DEI and Recruitment
                 for The Women's Network–Delaware. Outside of academics and
                 extracurriculars, I enjoy photography, traveling, watching
