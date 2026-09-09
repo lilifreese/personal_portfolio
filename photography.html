@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Lili Freese - Projects</title>
+    <title>Lili Freese - Photography</title>
 
     <link rel="icon" href="logo.png" type="image/png">
 
@@ -33,11 +33,8 @@
 
         body {
             font-family: 'DM Sans', sans-serif;
-
             background: #000;
             color: #fff;
-
-            min-height: 100vh;
         }
 
         /* =========================
@@ -66,29 +63,25 @@
         .nav-right {
             display: flex;
             align-items: center;
-
             gap: 25px;
         }
 
         .nav-left a,
         .nav-right a {
             font-family: 'DM Sans', sans-serif;
-
             font-weight: 500;
 
+            letter-spacing: 1px;
             font-size: 16px;
 
-            letter-spacing: 1px;
-
-            color: #fff;
-
             text-decoration: none;
+            color: #fff;
 
             padding-bottom: 3px;
 
             transition:
-                    opacity 0.3s ease,
-                    border-bottom 0.3s ease;
+                opacity 0.3s ease,
+                border-bottom 0.3s ease;
         }
 
         .nav-left a.active {
@@ -112,12 +105,10 @@
             transform: translateX(-50%);
 
             font-family: 'Oswald', sans-serif;
-
             font-weight: 600;
 
-            font-size: 20px;
-
             letter-spacing: 2px;
+            font-size: 20px;
 
             white-space: nowrap;
         }
@@ -127,220 +118,101 @@
         }
 
         /* =========================
-           INTRO
+           PHOTO GALLERY
         ========================= */
 
-        .intro {
-            max-width: 1500px;
+        .masonry {
+            column-count: 3;
+            column-gap: 10px;
 
-            margin: 0 auto;
-
-            padding: 90px 7% 70px;
+            padding: 20px;
         }
 
-        .intro h1 {
-            font-family: 'Oswald', sans-serif;
-
-            font-size: clamp(50px, 6vw, 72px);
-
-            font-weight: 600;
-
-            letter-spacing: 3px;
-
-            line-height: 0.95;
-        }
-
-        .intro p {
-            max-width: 580px;
-
-            margin-top: 25px;
-
-            font-size: 16px;
-
-            line-height: 1.8;
-
-            color: #888;
-        }
-
-        /* =========================
-           PROJECTS
-        ========================= */
-
-        .projects {
-            max-width: 1500px;
-
-            margin: 0 auto;
-
-            padding: 0 7% 110px;
-        }
-
-        .project {
+        .masonry a {
             display: block;
 
-            padding: 32px 0;
+            margin-bottom: 10px;
 
-            color: #fff;
-
-            border-top: 1px solid #222;
+            break-inside: avoid;
         }
 
-        .project:last-child {
-            border-bottom: 1px solid #222;
+        .masonry img {
+            width: 100%;
+
+            display: block;
+
+            border-radius: 4px;
+
+            cursor: pointer;
+
+            transition:
+                transform 0.3s ease,
+                opacity 0.3s ease;
         }
 
-        .project-info {
-            display: flex;
-
-            justify-content: space-between;
-            align-items: center;
-
-            gap: 30px;
-        }
-
-        .project-number {
-            font-size: 11px;
-
-            color: #666;
-
-            letter-spacing: 2px;
-
-            margin-bottom: 9px;
-        }
-
-        .project-title {
-            font-family: 'Oswald', sans-serif;
-
-            font-size: 28px;
-
-            font-weight: 500;
-
-            letter-spacing: 0.7px;
-
-            line-height: 1.2;
-
-            max-width: 900px;
-
-            transition: opacity 0.3s ease;
-        }
-
-        .project-type {
-            margin-top: 8px;
-
-            font-size: 12px;
-
-            color: #777;
-
-            letter-spacing: 0.7px;
+        .masonry img:hover {
+            transform: scale(1.015);
+            opacity: 0.85;
         }
 
         /* =========================
-           GITHUB
+           LIGHTBOX
         ========================= */
 
-        .github-link {
-            display: inline-flex;
+        .lightbox {
+            position: fixed;
 
+            top: 0;
+            left: 0;
+
+            width: 100%;
+            height: 100%;
+
+            background: rgba(0, 0, 0, 0.94);
+
+            display: none;
+
+            justify-content: center;
             align-items: center;
 
-            margin-top: 17px;
+            padding: 50px;
+
+            z-index: 10000;
+        }
+
+        .lightbox:target {
+            display: flex;
+        }
+
+        .lightbox img {
+            max-width: 90vw;
+            max-height: 90vh;
+
+            object-fit: contain;
+
+            border-radius: 4px;
+        }
+
+        .lightbox-close {
+            position: absolute;
+
+            top: 20px;
+            right: 30px;
 
             color: #fff;
 
-            font-size: 11px;
-
-            letter-spacing: 1.5px;
+            font-size: 35px;
+            font-weight: 300;
 
             text-decoration: none;
 
-            border-bottom: 1px solid #444;
-
-            padding-bottom: 5px;
-
-            transition:
-                    opacity 0.3s ease,
-                    border-color 0.3s ease;
-        }
-
-        .github-link:hover {
-            opacity: 0.6;
-
-            border-color: #fff;
-        }
-
-        .github-link i {
-            margin-right: 7px;
-
-            font-size: 12px;
-        }
-
-        /* =========================
-           ARROW
-        ========================= */
-
-        .project-arrow {
-            font-size: 24px;
-
-            color: #666;
-
-            transition:
-                    transform 0.35s ease,
-                    color 0.35s ease;
-        }
-
-        .project:hover .project-arrow {
-            transform: translate(6px, -6px);
-
-            color: #fff;
-        }
-
-        .project:hover .project-title {
-            opacity: 0.75;
-        }
-
-        /* =========================
-           FOOTER
-        ========================= */
-
-        footer {
-            max-width: 1500px;
-
-            margin: 0 auto;
-
-            border-top: 1px solid #1c1c1c;
-
-            padding: 50px 7%;
-
-            display: flex;
-
-            justify-content: space-between;
-
-            align-items: center;
-        }
-
-        footer p {
-            color: #666;
-
-            font-size: 12px;
-
-            letter-spacing: 0.5px;
-        }
-
-        .footer-socials {
-            display: flex;
-
-            gap: 20px;
-        }
-
-        .footer-socials a {
-            color: #fff;
-
-            font-size: 17px;
+            line-height: 1;
 
             transition: opacity 0.3s ease;
         }
 
-        .footer-socials a:hover {
-            opacity: 0.5;
+        .lightbox-close:hover {
+            opacity: 0.6;
         }
 
         /* =========================
@@ -353,19 +225,8 @@
                 padding: 0 35px;
             }
 
-            .intro {
-                padding-left: 6%;
-                padding-right: 6%;
-            }
-
-            .projects {
-                padding-left: 6%;
-                padding-right: 6%;
-            }
-
-            footer {
-                padding-left: 6%;
-                padding-right: 6%;
+            .masonry {
+                column-count: 2;
             }
 
         }
@@ -410,71 +271,26 @@
                 font-size: 13px;
             }
 
-            /* Intro */
+            .masonry {
+                column-count: 1;
 
-            .intro {
-                padding: 65px 6% 55px;
+                padding: 12px;
             }
 
-            .intro h1 {
-                font-size: 52px;
+            .masonry a {
+                margin-bottom: 12px;
             }
 
-            .intro p {
-                font-size: 15px;
-
-                line-height: 1.7;
-
-                margin-top: 22px;
+            .lightbox {
+                padding: 25px;
             }
 
-            /* Projects */
-
-            .projects {
-                padding: 0 6% 80px;
-            }
-
-            .project {
-                padding: 28px 0;
-            }
-
-            .project-info {
-                align-items: flex-start;
-            }
-
-            .project-title {
-                font-size: 24px;
-            }
-
-            .project-type {
-                font-size: 11px;
-            }
-
-            .github-link {
-                font-size: 10px;
-            }
-
-            .project-arrow {
-                font-size: 20px;
-            }
-
-            /* Footer */
-
-            footer {
-                padding: 40px 6%;
-
-                flex-direction: column;
-
-                gap: 25px;
-
-                text-align: center;
+            .lightbox img {
+                max-width: 95vw;
+                max-height: 85vh;
             }
 
         }
-
-        /* =========================
-           SMALL PHONES
-        ========================= */
 
         @media (max-width: 500px) {
 
@@ -489,18 +305,6 @@
             .nav-left a,
             .nav-right a {
                 font-size: 11px;
-            }
-
-            .intro h1 {
-                font-size: 45px;
-            }
-
-            .project-title {
-                font-size: 21px;
-            }
-
-            .project {
-                padding: 25px 0;
             }
 
         }
@@ -518,11 +322,11 @@
             Welcome
         </a>
 
-        <a href="photography.html">
+        <a href="photography.html" class="active">
             Photography
         </a>
 
-        <a href="projects.html" class="active">
+        <a href="projects.html">
             Projects
         </a>
 
@@ -561,147 +365,133 @@
 
 </header>
 
-<!-- =========================
-     INTRO
-========================= -->
+<main class="masonry">
 
-<section class="intro">
+    <a href="#img1">
+        <img src="images/strip.JPG"
+             alt="Las Vegas city view">
+    </a>
 
-    <h1>
-        PROJECTS
-    </h1>
+    <a href="#img2">
+        <img src="images/squirrel.JPG"
+             alt="Squirrel on a rock">
+    </a>
 
-    <p>
-        A collection of projects, creative work, and things I've built.
-    </p>
+    <a href="#img3">
+        <img src="images/brycecanyon.JPG"
+             alt="Bryce Canyon landscape">
+    </a>
 
-</section>
+    <a href="#img4">
+        <img src="images/newarkres.JPG"
+             alt="Sunset over river">
+    </a>
 
-<!-- =========================
-     PROJECT LIST
-========================= -->
+    <a href="#img5">
+        <img src="images/grandcanyon.JPG"
+             alt="Grand Canyon landscape">
+    </a>
 
-<main class="projects">
+    <a href="#img6">
+        <img src="images/horeshoebend.JPG"
+             alt="Horseshoe Bend">
+    </a>
 
-    <!-- PROJECT 01 -->
+    <a href="#img7">
+        <img src="images/cactus.JPG"
+             alt="Cactus desert plants">
+    </a>
 
-    <div class="project">
+    <a href="#img8">
+        <img src="images/zion1.JPG"
+             alt="Zion cliffs closeup">
+    </a>
 
-        <div class="project-info">
+    <a href="#img9">
+        <img src="images/zion2.JPG"
+             alt="Zion landscape">
+    </a>
 
-            <div>
+    <a href="#img10">
+        <img src="images/inside.JPG"
+             alt="Night city lights">
+    </a>
 
-                <div class="project-number">
-                    01
-                </div>
+    <a href="#img11">
+        <img src="images/zion3.JPG"
+             alt="Zion rock formations">
+    </a>
 
-                <div class="project-title">
-                    100X35 Esports and Team Curiosity Controller Overlays
-                </div>
-
-                <div class="project-type">
-                    UI Design · Development · Esports
-                </div>
-
-                <a href="https://github.com/luckyy1er/controller_overlays"
-                   class="github-link"
-                   target="_blank"
-                   rel="noopener noreferrer">
-
-                    <i class="fab fa-github"></i>
-
-                    VIEW ON GITHUB
-
-                </a>
-
-            </div>
-
-            <div class="project-arrow">
-                ↗
-            </div>
-
-        </div>
-
-    </div>
-
-
-    <!-- PROJECT 02 -->
-
-    <div class="project">
-
-        <div class="project-info">
-
-            <div>
-
-                <div class="project-number">
-                    02
-                </div>
-
-                <div class="project-title">
-                    DISCORD BOT
-                </div>
-
-                <div class="project-type">
-                    Python · Discord · Automation
-                </div>
-
-                <a href="https://github.com/luckyy1er/ticket-bot"
-                   class="github-link"
-                   target="_blank"
-                   rel="noopener noreferrer">
-
-                    <i class="fab fa-github"></i>
-
-                    VIEW ON GITHUB
-
-                </a>
-
-            </div>
-
-            <div class="project-arrow">
-                ↗
-            </div>
-
-        </div>
-
-    </div>
+    <a href="#img12">
+        <img src="images/flower.JPG"
+             alt="Flower closeup">
+    </a>
 
 </main>
 
 <!-- =========================
-     FOOTER
+     LIGHTBOXES
 ========================= -->
 
-<footer>
+<div id="img1" class="lightbox">
+    <a href="#" class="lightbox-close">&times;</a>
+    <img src="images/strip.JPG" alt="Las Vegas city view">
+</div>
 
-    <p>
-        © 2026 Lili Freese
-    </p>
+<div id="img2" class="lightbox">
+    <a href="#" class="lightbox-close">&times;</a>
+    <img src="images/squirrel.JPG" alt="Squirrel on a rock">
+</div>
 
-    <div class="footer-socials">
+<div id="img3" class="lightbox">
+    <a href="#" class="lightbox-close">&times;</a>
+    <img src="images/brycecanyon.JPG" alt="Bryce Canyon landscape">
+</div>
 
-        <a href="https://instagram.com/lilifreesephoto"
-           target="_blank"
-           rel="noopener noreferrer"
-           aria-label="Instagram">
-            <i class="fab fa-instagram"></i>
-        </a>
+<div id="img4" class="lightbox">
+    <a href="#" class="lightbox-close">&times;</a>
+    <img src="images/newarkres.JPG" alt="Sunset over river">
+</div>
 
-        <a href="https://linkedin.com/in/lilifreese"
-           target="_blank"
-           rel="noopener noreferrer"
-           aria-label="LinkedIn">
-            <i class="fab fa-linkedin"></i>
-        </a>
+<div id="img5" class="lightbox">
+    <a href="#" class="lightbox-close">&times;</a>
+    <img src="images/grandcanyon.JPG" alt="Grand Canyon landscape">
+</div>
 
-        <a href="mailto:lilifreese@gmail.com"
-           aria-label="Email">
-            <i class="fas fa-envelope"></i>
-        </a>
+<div id="img6" class="lightbox">
+    <a href="#" class="lightbox-close">&times;</a>
+    <img src="images/horeshoebend.JPG" alt="Horseshoe Bend">
+</div>
 
-    </div>
+<div id="img7" class="lightbox">
+    <a href="#" class="lightbox-close">&times;</a>
+    <img src="images/cactus.JPG" alt="Cactus desert plants">
+</div>
 
-</footer>
+<div id="img8" class="lightbox">
+    <a href="#" class="lightbox-close">&times;</a>
+    <img src="images/zion1.JPG" alt="Zion cliffs closeup">
+</div>
+
+<div id="img9" class="lightbox">
+    <a href="#" class="lightbox-close">&times;</a>
+    <img src="images/zion2.JPG" alt="Zion landscape">
+</div>
+
+<div id="img10" class="lightbox">
+    <a href="#" class="lightbox-close">&times;</a>
+    <img src="images/inside.JPG" alt="Night city lights">
+</div>
+
+<div id="img11" class="lightbox">
+    <a href="#" class="lightbox-close">&times;</a>
+    <img src="images/zion3.JPG" alt="Zion rock formations">
+</div>
+
+<div id="img12" class="lightbox">
+    <a href="#" class="lightbox-close">&times;</a>
+    <img src="images/flower.JPG" alt="Flower closeup">
+</div>
 
 </body>
 </html>
