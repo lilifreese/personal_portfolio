@@ -1,197 +1,707 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lili Freese - Photography</title>
+
+    <title>Lili Freese - Projects</title>
+
     <link rel="icon" href="logo.png" type="image/png">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=Oswald:wght@500;600&display=swap" rel="stylesheet">
 
-    <!-- Font Awesome for social icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=Oswald:wght@500;600&display=swap"
+          rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
-        * { margin:0; padding:0; box-sizing:border-box; }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
 
         body {
             font-family: 'DM Sans', sans-serif;
-            font-weight: 400;
+
             background: #000;
             color: #fff;
+
+            min-height: 100vh;
         }
 
-        /* Header layout */
+        /* =========================
+           HEADER
+        ========================= */
+
         header {
-            position: relative;
+            position: sticky;
+            top: 0;
+
             display: flex;
             justify-content: space-between;
             align-items: center;
+
             height: 80px;
+
             padding: 0 50px;
+
             background: #000;
+            border-bottom: 1px solid #151515;
+
             z-index: 1000;
         }
 
-        .nav-left, .nav-right {
+        .nav-left,
+        .nav-right {
             display: flex;
             align-items: center;
+
             gap: 25px;
-            z-index: 2;
         }
 
-        .nav-left a, .nav-right a {
+        .nav-left a,
+        .nav-right a {
             font-family: 'DM Sans', sans-serif;
+
             font-weight: 500;
-            letter-spacing: 1px;
+
             font-size: 16px;
-            text-decoration: none;
+
+            letter-spacing: 1px;
+
             color: #fff;
-            transition: opacity 0.3s, border-bottom 0.3s;
+
+            text-decoration: none;
+
             padding-bottom: 3px;
+
+            transition:
+                    opacity 0.3s ease,
+                    border-bottom 0.3s ease;
         }
 
-        /* Highlight active page */
         .nav-left a.active {
             border-bottom: 2px solid #fff;
         }
 
-        .nav-left a:hover, .nav-right a:hover { opacity: 0.7; }
+        .nav-left a:hover,
+        .nav-right a:hover {
+            opacity: 0.55;
+        }
 
-        /* Logo in center */
+        /* =========================
+           LOGO
+        ========================= */
+
         .logo {
             position: absolute;
+
             left: 50%;
+
             transform: translateX(-50%);
+
             font-family: 'Oswald', sans-serif;
+
             font-weight: 600;
-            letter-spacing: 2px; /* smaller spacing */
+
             font-size: 20px;
-            text-align: center;
+
+            letter-spacing: 2px;
+
             white-space: nowrap;
         }
 
         .nav-right a i {
             font-size: 18px;
+        }
+
+        /* =========================
+           INTRO
+        ========================= */
+
+        .intro {
+            max-width: 1500px;
+
+            margin: 0 auto;
+
+            padding: 90px 7% 70px;
+        }
+
+        .intro h1 {
+            font-family: 'Oswald', sans-serif;
+
+            font-size: clamp(50px, 6vw, 72px);
+
+            font-weight: 600;
+
+            letter-spacing: 3px;
+
+            line-height: 0.95;
+        }
+
+        .intro p {
+            max-width: 580px;
+
+            margin-top: 25px;
+
+            font-size: 16px;
+
+            line-height: 1.8;
+
+            color: #888;
+        }
+
+        /* =========================
+           PROJECTS
+        ========================= */
+
+        .projects {
+            max-width: 1500px;
+
+            margin: 0 auto;
+
+            padding: 0 7% 110px;
+        }
+
+        .project {
+            display: block;
+
+            padding: 32px 0;
+
             color: #fff;
-            transition: opacity 0.3s;
+
+            border-top: 1px solid #222;
         }
 
-        .nav-right a i:hover { opacity: 0.7; }
-
-        @media(max-width: 800px){
-            header {
-                flex-direction: column;
-                height: auto;
-                gap: 10px;
-                padding: 10px 20px;
-            }
-            .logo { position: static; transform: none; font-size: 18px; }
-            .nav-left, .nav-right { justify-content: center; gap: 15px; }
+        .project:last-child {
+            border-bottom: 1px solid #222;
         }
 
-        /* Masonry gallery */
-        .masonry {
-            column-count: 3;
-            column-gap: 10px;
-            padding: 20px;
-        }
-
-        @media(max-width:1000px){ .masonry { column-count:2; } }
-        @media(max-width:600px){ .masonry { column-count:1; } }
-
-        .masonry img {
-            width:100%;
-            display:block;
-            margin-bottom:10px;
-            border-radius:4px;
-            transition: transform 0.3s;
-            cursor:pointer;
-        }
-
-        .masonry img:hover { transform: scale(1.05); }
-
-        /* Lightbox styles */
-        .lightbox {
-            position: fixed;
-            top:0; left:0;
-            width: 100%; height: 100%;
-            background: rgba(0,0,0,0.9);
-            display: none;
-            justify-content: center;
-            align-items: center;
-            z-index: 10000;
-        }
-
-        .lightbox img {
-            max-width: 90%;
-            max-height: 90%;
-            border-radius: 4px;
-        }
-
-        .lightbox:target {
+        .project-info {
             display: flex;
+
+            justify-content: space-between;
+            align-items: center;
+
+            gap: 30px;
         }
 
-        .lightbox-close {
-            position: absolute;
-            top: 20px;
-            right: 30px;
-            font-size: 30px;
-            color: #fff;
-            text-decoration: none;
+        .project-number {
+            font-size: 11px;
+
+            color: #666;
+
+            letter-spacing: 2px;
+
+            margin-bottom: 9px;
         }
+
+        .project-title {
+            font-family: 'Oswald', sans-serif;
+
+            font-size: 28px;
+
+            font-weight: 500;
+
+            letter-spacing: 0.7px;
+
+            line-height: 1.2;
+
+            max-width: 900px;
+
+            transition: opacity 0.3s ease;
+        }
+
+        .project-type {
+            margin-top: 8px;
+
+            font-size: 12px;
+
+            color: #777;
+
+            letter-spacing: 0.7px;
+        }
+
+        /* =========================
+           GITHUB
+        ========================= */
+
+        .github-link {
+            display: inline-flex;
+
+            align-items: center;
+
+            margin-top: 17px;
+
+            color: #fff;
+
+            font-size: 11px;
+
+            letter-spacing: 1.5px;
+
+            text-decoration: none;
+
+            border-bottom: 1px solid #444;
+
+            padding-bottom: 5px;
+
+            transition:
+                    opacity 0.3s ease,
+                    border-color 0.3s ease;
+        }
+
+        .github-link:hover {
+            opacity: 0.6;
+
+            border-color: #fff;
+        }
+
+        .github-link i {
+            margin-right: 7px;
+
+            font-size: 12px;
+        }
+
+        /* =========================
+           ARROW
+        ========================= */
+
+        .project-arrow {
+            font-size: 24px;
+
+            color: #666;
+
+            transition:
+                    transform 0.35s ease,
+                    color 0.35s ease;
+        }
+
+        .project:hover .project-arrow {
+            transform: translate(6px, -6px);
+
+            color: #fff;
+        }
+
+        .project:hover .project-title {
+            opacity: 0.75;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            max-width: 1500px;
+
+            margin: 0 auto;
+
+            border-top: 1px solid #1c1c1c;
+
+            padding: 50px 7%;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+        }
+
+        footer p {
+            color: #666;
+
+            font-size: 12px;
+
+            letter-spacing: 0.5px;
+        }
+
+        .footer-socials {
+            display: flex;
+
+            gap: 20px;
+        }
+
+        .footer-socials a {
+            color: #fff;
+
+            font-size: 17px;
+
+            transition: opacity 0.3s ease;
+        }
+
+        .footer-socials a:hover {
+            opacity: 0.5;
+        }
+
+        /* =========================
+           TABLET
+        ========================= */
+
+        @media (max-width: 1000px) {
+
+            header {
+                padding: 0 35px;
+            }
+
+            .intro {
+                padding-left: 6%;
+                padding-right: 6%;
+            }
+
+            .projects {
+                padding-left: 6%;
+                padding-right: 6%;
+            }
+
+            footer {
+                padding-left: 6%;
+                padding-right: 6%;
+            }
+
+        }
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 800px) {
+
+            header {
+                height: auto;
+
+                padding: 18px 20px;
+
+                flex-wrap: wrap;
+
+                gap: 18px;
+            }
+
+            .logo {
+                position: static;
+
+                transform: none;
+
+                order: -1;
+
+                width: 100%;
+
+                text-align: center;
+
+                font-size: 18px;
+            }
+
+            .nav-left,
+            .nav-right {
+                gap: 15px;
+            }
+
+            .nav-left a,
+            .nav-right a {
+                font-size: 13px;
+            }
+
+            /* Intro */
+
+            .intro {
+                padding: 65px 6% 55px;
+            }
+
+            .intro h1 {
+                font-size: 52px;
+            }
+
+            .intro p {
+                font-size: 15px;
+
+                line-height: 1.7;
+
+                margin-top: 22px;
+            }
+
+            /* Projects */
+
+            .projects {
+                padding: 0 6% 80px;
+            }
+
+            .project {
+                padding: 28px 0;
+            }
+
+            .project-info {
+                align-items: flex-start;
+            }
+
+            .project-title {
+                font-size: 24px;
+            }
+
+            .project-type {
+                font-size: 11px;
+            }
+
+            .github-link {
+                font-size: 10px;
+            }
+
+            .project-arrow {
+                font-size: 20px;
+            }
+
+            /* Footer */
+
+            footer {
+                padding: 40px 6%;
+
+                flex-direction: column;
+
+                gap: 25px;
+
+                text-align: center;
+            }
+
+        }
+
+        /* =========================
+           SMALL PHONES
+        ========================= */
+
+        @media (max-width: 500px) {
+
+            .nav-left {
+                gap: 11px;
+            }
+
+            .nav-right {
+                gap: 12px;
+            }
+
+            .nav-left a,
+            .nav-right a {
+                font-size: 11px;
+            }
+
+            .intro h1 {
+                font-size: 45px;
+            }
+
+            .project-title {
+                font-size: 21px;
+            }
+
+            .project {
+                padding: 25px 0;
+            }
+
+        }
+
     </style>
 </head>
+
 <body>
 
 <header>
-    <div class="nav-left">
-        <a href="index.html">Welcome</a>
-        <a href="photography.html" class="active">Work</a> <!-- Active page underlined -->
-        <a href="about.html">About</a>
+
+    <nav class="nav-left">
+
+        <a href="index.html">
+            Welcome
+        </a>
+
+        <a href="photography.html">
+            Photography
+        </a>
+
+        <a href="projects.html" class="active">
+            Projects
+        </a>
+
+        <a href="about.html">
+            About
+        </a>
+
+    </nav>
+
+    <div class="logo">
+        LILI FREESE
     </div>
 
-    <div class="logo">LILI FREESE</div>
+    <nav class="nav-right">
 
-    <div class="nav-right">
-        <a href="https://instagram.com/lilifreesephoto" target="_blank"><i class="fab fa-instagram"></i></a>
-        <a href="https://linkedin.com/in/lilifreese" target="_blank"><i class="fab fa-linkedin"></i></a>
-        <a href="mailto:lilifreese@gmail.com"><i class="fas fa-envelope"></i></a>
-    </div>
+        <a href="https://instagram.com/lilifreesephoto"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+        </a>
+
+        <a href="https://linkedin.com/in/lilifreese"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="LinkedIn">
+            <i class="fab fa-linkedin"></i>
+        </a>
+
+        <a href="mailto:lilifreese@gmail.com"
+           aria-label="Email">
+            <i class="fas fa-envelope"></i>
+        </a>
+
+    </nav>
+
 </header>
 
-<main class="masonry">
-    <!-- Lightbox links for clickable enlargement -->
-    <a href="#img1"><img src="images/strip.JPG" alt="Las Vegas city view"></a>
-    <a href="#img2"><img src="images/squirrel.JPG" alt="Squirrel on a rock"></a>
-    <a href="#img3"><img src="images/brycecanyon.JPG" alt="Bryce Canyon landscape"></a>
-    <a href="#img4"><img src="images/newarkres.JPG" alt="Sunset over river"></a>
-    <a href="#img5"><img src="images/grandcanyon.JPG" alt="Grand Canyon landscape"></a>
-    <a href="#img6"><img src="images/horeshoebend.JPG" alt="Horseshoe Bend"></a>
-    <a href="#img7"><img src="images/cactus.JPG" alt="Cactus desert plants"></a>
-    <a href="#img8"><img src="images/zion1.JPG" alt="Zion cliffs closeup"></a>
-    <a href="#img9"><img src="images/zion2.JPG" alt="Horseshoe Bend aerial view"></a>
-    <a href="#img10"><img src="images/inside.JPG" alt="Night city lights"></a>
-    <a href="#img11"><img src="images/zion3.JPG" alt="Zion rock formations"></a>
-    <a href="#img12"><img src="images/flower.JPG" alt="Flower closeup"></a>
+<!-- =========================
+     INTRO
+========================= -->
+
+<section class="intro">
+
+    <h1>
+        PROJECTS
+    </h1>
+
+    <p>
+        A collection of projects, creative work, and things I've built.
+    </p>
+
+</section>
+
+<!-- =========================
+     PROJECT LIST
+========================= -->
+
+<main class="projects">
+
+    <!-- PROJECT 01 -->
+
+    <div class="project">
+
+        <div class="project-info">
+
+            <div>
+
+                <div class="project-number">
+                    01
+                </div>
+
+                <div class="project-title">
+                    100X35 Esports and Team Curiosity Controller Overlays
+                </div>
+
+                <div class="project-type">
+                    UI Design · Development · Esports
+                </div>
+
+                <a href="https://github.com/luckyy1er/controller_overlays"
+                   class="github-link"
+                   target="_blank"
+                   rel="noopener noreferrer">
+
+                    <i class="fab fa-github"></i>
+
+                    VIEW ON GITHUB
+
+                </a>
+
+            </div>
+
+            <div class="project-arrow">
+                ↗
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- PROJECT 02 -->
+
+    <div class="project">
+
+        <div class="project-info">
+
+            <div>
+
+                <div class="project-number">
+                    02
+                </div>
+
+                <div class="project-title">
+                    DISCORD BOT
+                </div>
+
+                <div class="project-type">
+                    Python · Discord · Automation
+                </div>
+
+                <a href="https://github.com/luckyy1er/ticket-bot"
+                   class="github-link"
+                   target="_blank"
+                   rel="noopener noreferrer">
+
+                    <i class="fab fa-github"></i>
+
+                    VIEW ON GITHUB
+
+                </a>
+
+            </div>
+
+            <div class="project-arrow">
+                ↗
+            </div>
+
+        </div>
+
+    </div>
+
 </main>
 
-<!-- Lightbox overlays -->
-<div id="img1" class="lightbox"><a href="#" class="lightbox-close">&times;</a><img src="images/strip.JPG" alt=""></div>
-<div id="img2" class="lightbox"><a href="#" class="lightbox-close">&times;</a><img src="images/squirrel.JPG" alt=""></div>
-<div id="img3" class="lightbox"><a href="#" class="lightbox-close">&times;</a><img src="images/brycecanyon.JPG" alt=""></div>
-<div id="img4" class="lightbox"><a href="#" class="lightbox-close">&times;</a><img src="images/newarkres.JPG" alt=""></div>
-<div id="img5" class="lightbox"><a href="#" class="lightbox-close">&times;</a><img src="images/grandcanyon.JPG" alt=""></div>
-<div id="img6" class="lightbox"><a href="#" class="lightbox-close">&times;</a><img src="images/horeshoebend.JPG" alt=""></div>
-<div id="img7" class="lightbox"><a href="#" class="lightbox-close">&times;</a><img src="images/cactus.JPG" alt=""></div>
-<div id="img8" class="lightbox"><a href="#" class="lightbox-close">&times;</a><img src="images/zion1.JPG" alt=""></div>
-<div id="img9" class="lightbox"><a href="#" class="lightbox-close">&times;</a><img src="images/zion2.JPG" alt=""></div>
-<div id="img10" class="lightbox"><a href="#" class="lightbox-close">&times;</a><img src="images/inside.JPG" alt=""></div>
-<div id="img11" class="lightbox"><a href="#" class="lightbox-close">&times;</a><img src="images/zion3.JPG" alt=""></div>
-<div id="img12" class="lightbox"><a href="#" class="lightbox-close">&times;</a><img src="images/flower.JPG" alt=""></div>
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <p>
+        © 2026 Lili Freese
+    </p>
+
+    <div class="footer-socials">
+
+        <a href="https://instagram.com/lilifreesephoto"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+        </a>
+
+        <a href="https://linkedin.com/in/lilifreese"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="LinkedIn">
+            <i class="fab fa-linkedin"></i>
+        </a>
+
+        <a href="mailto:lilifreese@gmail.com"
+           aria-label="Email">
+            <i class="fas fa-envelope"></i>
+        </a>
+
+    </div>
+
+</footer>
 
 </body>
 </html>
