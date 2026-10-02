@@ -41,9 +41,7 @@
 
         body {
             font-family: 'DM Sans', sans-serif;
-
             background: #000;
-
             color: #fff;
         }
 
@@ -53,15 +51,11 @@
         ========================================= */
 
         header {
-
             position: sticky;
-
             top: 0;
 
             display: flex;
-
             justify-content: space-between;
-
             align-items: center;
 
             height: 80px;
@@ -78,18 +72,14 @@
 
         .nav-left,
         .nav-right {
-
             display: flex;
-
             align-items: center;
-
             gap: 25px;
         }
 
 
         .nav-left a,
         .nav-right a {
-
             font-family: 'DM Sans', sans-serif;
 
             font-weight: 500;
@@ -111,20 +101,17 @@
 
 
         .nav-left a.active {
-
             border-bottom: 2px solid #fff;
         }
 
 
         .nav-left a:hover,
         .nav-right a:hover {
-
             opacity: 0.55;
         }
 
 
         .logo {
-
             position: absolute;
 
             left: 50%;
@@ -144,7 +131,6 @@
 
 
         .nav-right a i {
-
             font-size: 18px;
         }
 
@@ -154,7 +140,6 @@
         ========================================= */
 
         .photo-nav {
-
             display: flex;
 
             justify-content: center;
@@ -170,7 +155,6 @@
 
 
         .photo-nav a {
-
             color: #fff;
 
             text-decoration: none;
@@ -194,13 +178,11 @@
 
 
         .photo-nav a:hover {
-
             opacity: 0.55;
         }
 
 
         .photo-nav a.active {
-
             border-bottom: 2px solid #fff;
         }
 
@@ -210,7 +192,6 @@
         ========================================= */
 
         .masonry {
-
             column-count: 3;
 
             column-gap: 10px;
@@ -220,7 +201,6 @@
 
 
         .masonry a {
-
             display: block;
 
             margin-bottom: 10px;
@@ -232,7 +212,6 @@
 
 
         .masonry img {
-
             width: 100%;
 
             height: auto;
@@ -250,7 +229,6 @@
 
 
         .masonry img:hover {
-
             transform: scale(1.015);
 
             opacity: 0.85;
@@ -262,7 +240,6 @@
         ========================================= */
 
         .coming-soon {
-
             min-height: calc(100vh - 130px);
 
             display: flex;
@@ -278,7 +255,6 @@
 
 
         .coming-soon h1 {
-
             font-family: 'Oswald', sans-serif;
 
             font-size: 42px;
@@ -294,15 +270,12 @@
         ========================================= */
 
         .lightbox {
-
             position: fixed;
 
             top: 0;
-
             left: 0;
 
             width: 100%;
-
             height: 100%;
 
             background: rgba(0, 0, 0, 0.94);
@@ -320,13 +293,11 @@
 
 
         .lightbox:target {
-
             display: flex;
         }
 
 
         .lightbox img {
-
             max-width: 90vw;
 
             max-height: 90vh;
@@ -342,11 +313,9 @@
 
 
         .lightbox-close {
-
             position: absolute;
 
             top: 20px;
-
             right: 30px;
 
             color: #fff;
@@ -364,7 +333,6 @@
 
 
         .lightbox-close:hover {
-
             opacity: 0.6;
         }
 
@@ -376,13 +344,11 @@
         @media (max-width: 1000px) {
 
             header {
-
                 padding: 0 35px;
             }
 
 
             .masonry {
-
                 column-count: 2;
             }
 
@@ -396,7 +362,6 @@
         @media (max-width: 800px) {
 
             header {
-
                 height: auto;
 
                 padding: 18px 20px;
@@ -408,7 +373,6 @@
 
 
             .logo {
-
                 position: static;
 
                 transform: none;
@@ -425,20 +389,17 @@
 
             .nav-left,
             .nav-right {
-
                 gap: 15px;
             }
 
 
             .nav-left a,
             .nav-right a {
-
                 font-size: 13px;
             }
 
 
             .photo-nav {
-
                 gap: 20px;
 
                 padding-top: 18px;
@@ -446,13 +407,11 @@
 
 
             .photo-nav a {
-
                 font-size: 13px;
             }
 
 
             .masonry {
-
                 column-count: 1;
 
                 padding: 12px;
@@ -460,19 +419,16 @@
 
 
             .masonry a {
-
                 margin-bottom: 12px;
             }
 
 
             .lightbox {
-
                 padding: 25px;
             }
 
 
             .lightbox img {
-
                 max-width: 95vw;
 
                 max-height: 85vh;
@@ -480,7 +436,6 @@
 
 
             .coming-soon h1 {
-
                 font-size: 32px;
 
                 letter-spacing: 3px;
@@ -496,32 +451,27 @@
         @media (max-width: 500px) {
 
             .nav-left {
-
                 gap: 11px;
             }
 
 
             .nav-right {
-
                 gap: 12px;
             }
 
 
             .nav-left a,
             .nav-right a {
-
                 font-size: 11px;
             }
 
 
             .photo-nav {
-
                 gap: 15px;
             }
 
 
             .photo-nav a {
-
                 font-size: 11px;
             }
 
@@ -541,18 +491,16 @@
 
 <header>
 
-
     <nav class="nav-left">
-
 
         <a href="index.html">
             Welcome
         </a>
 
 
-        <!-- Always opens Personal -->
+        <!-- Photography always opens Personal -->
 
-        <a href="photography.html#personal"
+        <a href="photography.html"
            class="active">
 
             Photography
@@ -569,7 +517,6 @@
             About
         </a>
 
-
     </nav>
 
 
@@ -579,7 +526,6 @@
 
 
     <nav class="nav-right">
-
 
         <a href="https://instagram.com/lilifreesephoto"
            target="_blank"
@@ -608,36 +554,33 @@
 
         </a>
 
-
     </nav>
-
 
 </header>
 
 
 
 <!-- =========================================
-     PHOTOGRAPHY SUB-TABS
+     PHOTOGRAPHY SUB TABS
 ========================================= -->
 
 <nav class="photo-nav">
 
-
-    <a href="#personal"
-       id="personal-tab">
+    <a href="#"
+       id="personal-tab"
+       class="active">
 
         Personal
 
     </a>
 
 
-    <a href="#review"
+    <a href="#"
        id="review-tab">
 
         The Review
 
     </a>
-
 
 </nav>
 
@@ -648,7 +591,6 @@
 ========================================= -->
 
 <section id="personal">
-
 
     <main class="masonry">
 
@@ -771,8 +713,8 @@
      THE REVIEW
 ========================================= -->
 
-<section id="review">
-
+<section id="review"
+         style="display: none;">
 
     <main class="coming-soon">
 
@@ -782,7 +724,6 @@
 
     </main>
 
-
 </section>
 
 
@@ -791,11 +732,13 @@
      LIGHTBOXES
 ========================================= -->
 
-
 <div id="img1" class="lightbox">
 
-    <a href="#personal" class="lightbox-close">
+    <a href="#"
+       class="lightbox-close">
+
         &times;
+
     </a>
 
     <img src="images/strip.JPG"
@@ -806,8 +749,11 @@
 
 <div id="img2" class="lightbox">
 
-    <a href="#personal" class="lightbox-close">
+    <a href="#"
+       class="lightbox-close">
+
         &times;
+
     </a>
 
     <img src="images/squirrel.JPG"
@@ -818,8 +764,11 @@
 
 <div id="img3" class="lightbox">
 
-    <a href="#personal" class="lightbox-close">
+    <a href="#"
+       class="lightbox-close">
+
         &times;
+
     </a>
 
     <img src="images/brycecanyon.JPG"
@@ -830,8 +779,11 @@
 
 <div id="img4" class="lightbox">
 
-    <a href="#personal" class="lightbox-close">
+    <a href="#"
+       class="lightbox-close">
+
         &times;
+
     </a>
 
     <img src="images/newarkres.JPG"
@@ -842,8 +794,11 @@
 
 <div id="img5" class="lightbox">
 
-    <a href="#personal" class="lightbox-close">
+    <a href="#"
+       class="lightbox-close">
+
         &times;
+
     </a>
 
     <img src="images/grandcanyon.JPG"
@@ -854,8 +809,11 @@
 
 <div id="img6" class="lightbox">
 
-    <a href="#personal" class="lightbox-close">
+    <a href="#"
+       class="lightbox-close">
+
         &times;
+
     </a>
 
     <img src="images/horeshoebend.JPG"
@@ -866,8 +824,11 @@
 
 <div id="img7" class="lightbox">
 
-    <a href="#personal" class="lightbox-close">
+    <a href="#"
+       class="lightbox-close">
+
         &times;
+
     </a>
 
     <img src="images/cactus.JPG"
@@ -878,8 +839,11 @@
 
 <div id="img8" class="lightbox">
 
-    <a href="#personal" class="lightbox-close">
+    <a href="#"
+       class="lightbox-close">
+
         &times;
+
     </a>
 
     <img src="images/zion1.JPG"
@@ -890,8 +854,11 @@
 
 <div id="img9" class="lightbox">
 
-    <a href="#personal" class="lightbox-close">
+    <a href="#"
+       class="lightbox-close">
+
         &times;
+
     </a>
 
     <img src="images/zion2.JPG"
@@ -902,8 +869,11 @@
 
 <div id="img10" class="lightbox">
 
-    <a href="#personal" class="lightbox-close">
+    <a href="#"
+       class="lightbox-close">
+
         &times;
+
     </a>
 
     <img src="images/inside.JPG"
@@ -914,8 +884,11 @@
 
 <div id="img11" class="lightbox">
 
-    <a href="#personal" class="lightbox-close">
+    <a href="#"
+       class="lightbox-close">
+
         &times;
+
     </a>
 
     <img src="images/zion3.JPG"
@@ -926,8 +899,11 @@
 
 <div id="img12" class="lightbox">
 
-    <a href="#personal" class="lightbox-close">
+    <a href="#"
+       class="lightbox-close">
+
         &times;
+
     </a>
 
     <img src="images/flower.JPG"
@@ -943,60 +919,72 @@
 
 <script>
 
-    const personalSection = document.getElementById('personal');
-    const reviewSection = document.getElementById('review');
+    const personalSection =
+        document.getElementById('personal');
 
-    const personalTab = document.getElementById('personal-tab');
-    const reviewTab = document.getElementById('review-tab');
+    const reviewSection =
+        document.getElementById('review');
 
+    const personalTab =
+        document.getElementById('personal-tab');
 
-    function showTab() {
-
-        /*
-         * If the URL contains #review,
-         * show The Review.
-         *
-         * Otherwise show Personal.
-         */
-
-        if (window.location.hash === '#review') {
-
-            personalSection.style.display = 'none';
-
-            reviewSection.style.display = 'block';
-
-            personalTab.classList.remove('active');
-
-            reviewTab.classList.add('active');
-
-        } else {
-
-            personalSection.style.display = 'block';
-
-            reviewSection.style.display = 'none';
-
-            personalTab.classList.add('active');
-
-            reviewTab.classList.remove('active');
-
-        }
-
-    }
+    const reviewTab =
+        document.getElementById('review-tab');
 
 
-    /*
-     * Run when the page first loads.
-     */
+    /* =========================================
+       SHOW PERSONAL
+    ========================================= */
 
-    showTab();
+    personalTab.addEventListener('click', function(event) {
+
+        event.preventDefault();
 
 
-    /*
-     * Run whenever someone clicks
-     * Personal or The Review.
-     */
+        personalSection.style.display = 'block';
 
-    window.addEventListener('hashchange', showTab);
+        reviewSection.style.display = 'none';
+
+
+        personalTab.classList.add('active');
+
+        reviewTab.classList.remove('active');
+
+
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+
+    });
+
+
+    /* =========================================
+       SHOW THE REVIEW
+    ========================================= */
+
+    reviewTab.addEventListener('click', function(event) {
+
+        event.preventDefault();
+
+
+        personalSection.style.display = 'none';
+
+        reviewSection.style.display = 'block';
+
+
+        personalTab.classList.remove('active');
+
+        reviewTab.classList.add('active');
+
+
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+
+    });
+
 
 </script>
 
