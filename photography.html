@@ -47,7 +47,7 @@
 
 
         /* =========================================
-           HEADER
+           MAIN HEADER
         ========================================= */
 
         header {
@@ -75,9 +75,7 @@
         .nav-right {
 
             display: flex;
-
             align-items: center;
-
             gap: 25px;
         }
 
@@ -145,65 +143,76 @@
 
 
         /* =========================================
-           TWO MAIN COLUMNS
-
-           PERSONAL        THE REVIEW
-           ========================================
-           | photos |      | photos |
-           | photos |      | photos |
+           PHOTOGRAPHY SUB-NAVIGATION
         ========================================= */
 
-        .photo-columns {
+        .photo-nav {
 
-            display: grid;
+            display: flex;
 
-            grid-template-columns: 1fr 1fr;
+            justify-content: center;
+
+            align-items: center;
 
             gap: 30px;
 
-            padding: 30px;
+            padding: 22px 20px 5px;
+
+            background: #000;
         }
 
 
-        /* =========================================
-           SECTION TITLES
-        ========================================= */
+        .photo-nav a {
 
-        .photo-section {
+            color: #fff;
 
-            min-width: 0;
-        }
+            text-decoration: none;
 
+            font-family: 'DM Sans', sans-serif;
 
-        .photo-section h2 {
-
-            font-family: 'Oswald', sans-serif;
-
-            font-size: 24px;
+            font-size: 14px;
 
             font-weight: 500;
 
-            letter-spacing: 2px;
+            letter-spacing: 1px;
 
-            text-transform: uppercase;
+            padding-bottom: 5px;
 
-            margin-bottom: 20px;
+            border-bottom: 2px solid transparent;
+
+            transition:
+                opacity 0.3s ease,
+                border-bottom 0.3s ease;
+        }
+
+
+        .photo-nav a:hover {
+
+            opacity: 0.55;
+        }
+
+
+        .photo-nav a.active {
+
+            border-bottom: 2px solid #fff;
         }
 
 
         /* =========================================
-           STAGGERED / MASONRY PHOTOS
+           PHOTO GALLERY
         ========================================= */
 
-        .photo-masonry {
+        .masonry {
 
-            column-count: 2;
+            column-count: 3;
 
             column-gap: 10px;
+
+            padding: 20px;
         }
 
 
-        .photo-masonry a {
+        .masonry a {
 
             display: block;
 
@@ -215,7 +224,7 @@
         }
 
 
-        .photo-masonry img {
+        .masonry img {
 
             width: 100%;
 
@@ -233,7 +242,7 @@
         }
 
 
-        .photo-masonry img:hover {
+        .masonry img:hover {
 
             transform: scale(1.015);
 
@@ -331,11 +340,9 @@
             }
 
 
-            .photo-columns {
+            .masonry {
 
-                gap: 20px;
-
-                padding: 20px;
+                column-count: 2;
             }
 
         }
@@ -389,39 +396,35 @@
             }
 
 
-            /*
-             * Personal and The Review
-             * stack vertically on mobile.
-             */
+            /* Sub-navigation */
 
-            .photo-columns {
+            .photo-nav {
 
-                grid-template-columns: 1fr;
+                gap: 20px;
 
-                gap: 50px;
-
-                padding: 15px;
+                padding-top: 18px;
             }
 
 
-            /*
-             * Personal still has TWO
-             * staggered photo columns.
-             */
+            .photo-nav a {
 
-            .photo-masonry {
-
-                column-count: 2;
-
-                column-gap: 10px;
+                font-size: 13px;
             }
 
 
-            .photo-section h2 {
+            /* One masonry column */
 
-                font-size: 22px;
+            .masonry {
 
-                margin-bottom: 15px;
+                column-count: 1;
+
+                padding: 12px;
+            }
+
+
+            .masonry a {
+
+                margin-bottom: 12px;
             }
 
 
@@ -442,10 +445,10 @@
 
 
         /* =========================================
-           VERY SMALL PHONES
+           SMALL PHONES
         ========================================= */
 
-        @media (max-width: 450px) {
+        @media (max-width: 500px) {
 
             .nav-left {
 
@@ -466,22 +469,15 @@
             }
 
 
-            /*
-             * Keep two photo columns even
-             * on small phones.
-             */
+            .photo-nav {
 
-            .photo-masonry {
-
-                column-count: 2;
-
-                column-gap: 8px;
+                gap: 15px;
             }
 
 
-            .photo-columns {
+            .photo-nav a {
 
-                padding: 12px;
+                font-size: 11px;
             }
 
         }
@@ -495,7 +491,7 @@
 
 
 <!-- =========================================
-     HEADER
+     MAIN NAVIGATION
 ========================================= -->
 
 <header>
@@ -503,10 +499,13 @@
 
     <nav class="nav-left">
 
+
         <a href="index.html">
             Welcome
         </a>
 
+
+        <!-- Clicking Photography always opens Personal -->
 
         <a href="photography.html" class="active">
             Photography
@@ -521,6 +520,7 @@
         <a href="about.html">
             About
         </a>
+
 
     </nav>
 
@@ -569,203 +569,148 @@
 
 
 <!-- =========================================
-     PHOTO SECTIONS
+     PHOTOGRAPHY SUB-TABS
 ========================================= -->
 
-<main class="photo-columns">
+<nav class="photo-nav">
 
 
-    <!-- =====================================
-         PERSONAL
+    <!-- Personal is the default -->
 
-         ALL 12 EXISTING PHOTOS
-    ====================================== -->
+    <a href="photography.html"
+       class="active">
 
-    <section class="photo-section">
+        Personal
 
+    </a>
 
-        <h2>
-            Personal
-        </h2>
 
+    <a href="review.html">
 
-        <div class="photo-masonry">
+        The Review
 
+    </a>
 
-            <!-- PHOTO 1 -->
 
-            <a href="#img1">
+</nav>
 
-                <img src="images/strip.JPG"
-                     alt="Las Vegas city view"
-                     loading="lazy">
 
-            </a>
 
+<!-- =========================================
+     PERSONAL PHOTOGRAPHY
 
-            <!-- PHOTO 2 -->
+     ORIGINAL 3-COLUMN MASONRY LAYOUT
+========================================= -->
 
-            <a href="#img2">
+<main class="masonry">
 
-                <img src="images/squirrel.JPG"
-                     alt="Squirrel on a rock"
-                     loading="lazy">
 
-            </a>
+    <a href="#img1">
 
+        <img src="images/strip.JPG"
+             alt="Las Vegas city view"
+             loading="lazy">
 
-            <!-- PHOTO 3 -->
+    </a>
 
-            <a href="#img3">
 
-                <img src="images/brycecanyon.JPG"
-                     alt="Bryce Canyon landscape"
-                     loading="lazy">
+    <a href="#img2">
 
-            </a>
+        <img src="images/squirrel.JPG"
+             alt="Squirrel on a rock"
+             loading="lazy">
 
+    </a>
 
-            <!-- PHOTO 4 -->
 
-            <a href="#img4">
+    <a href="#img3">
 
-                <img src="images/newarkres.JPG"
-                     alt="Sunset over river"
-                     loading="lazy">
+        <img src="images/brycecanyon.JPG"
+             alt="Bryce Canyon landscape"
+             loading="lazy">
 
-            </a>
+    </a>
 
 
-            <!-- PHOTO 5 -->
+    <a href="#img4">
 
-            <a href="#img5">
+        <img src="images/newarkres.JPG"
+             alt="Sunset over river"
+             loading="lazy">
 
-                <img src="images/grandcanyon.JPG"
-                     alt="Grand Canyon landscape"
-                     loading="lazy">
+    </a>
 
-            </a>
 
+    <a href="#img5">
 
-            <!-- PHOTO 6 -->
+        <img src="images/grandcanyon.JPG"
+             alt="Grand Canyon landscape"
+             loading="lazy">
 
-            <a href="#img6">
+    </a>
 
-                <img src="images/horeshoebend.JPG"
-                     alt="Horseshoe Bend"
-                     loading="lazy">
 
-            </a>
+    <a href="#img6">
 
+        <img src="images/horeshoebend.JPG"
+             alt="Horseshoe Bend"
+             loading="lazy">
 
-            <!-- PHOTO 7 -->
+    </a>
 
-            <a href="#img7">
 
-                <img src="images/cactus.JPG"
-                     alt="Cactus desert plants"
-                     loading="lazy">
+    <a href="#img7">
 
-            </a>
+        <img src="images/cactus.JPG"
+             alt="Cactus desert plants"
+             loading="lazy">
 
+    </a>
 
-            <!-- PHOTO 8 -->
 
-            <a href="#img8">
+    <a href="#img8">
 
-                <img src="images/zion1.JPG"
-                     alt="Zion cliffs closeup"
-                     loading="lazy">
+        <img src="images/zion1.JPG"
+             alt="Zion cliffs closeup"
+             loading="lazy">
 
-            </a>
+    </a>
 
 
-            <!-- PHOTO 9 -->
+    <a href="#img9">
 
-            <a href="#img9">
+        <img src="images/zion2.JPG"
+             alt="Zion landscape"
+             loading="lazy">
 
-                <img src="images/zion2.JPG"
-                     alt="Zion landscape"
-                     loading="lazy">
+    </a>
 
-            </a>
 
+    <a href="#img10">
 
-            <!-- PHOTO 10 -->
+        <img src="images/inside.JPG"
+             alt="Night city lights"
+             loading="lazy">
 
-            <a href="#img10">
+    </a>
 
-                <img src="images/inside.JPG"
-                     alt="Night city lights"
-                     loading="lazy">
 
-            </a>
+    <a href="#img11">
 
+        <img src="images/zion3.JPG"
+             alt="Zion rock formations"
+             loading="lazy">
 
-            <!-- PHOTO 11 -->
+    </a>
 
-            <a href="#img11">
 
-                <img src="images/zion3.JPG"
-                     alt="Zion rock formations"
-                     loading="lazy">
+    <a href="#img12">
 
-            </a>
+        <img src="images/flower.JPG"
+             alt="Flower closeup"
+             loading="lazy">
 
-
-            <!-- PHOTO 12 -->
-
-            <a href="#img12">
-
-                <img src="images/flower.JPG"
-                     alt="Flower closeup"
-                     loading="lazy">
-
-            </a>
-
-
-        </div>
-
-    </section>
-
-
-
-    <!-- =====================================
-         THE REVIEW
-
-         EMPTY FOR NOW
-    ====================================== -->
-
-    <section class="photo-section">
-
-
-        <h2>
-            The Review
-        </h2>
-
-
-        <div class="photo-masonry">
-
-            <!--
-
-                REVIEW PHOTOS GO HERE.
-
-                Example:
-
-                <a href="#review1">
-
-                    <img src="images/review1.JPG"
-                         alt="Review photograph"
-                         loading="lazy">
-
-                </a>
-
-            -->
-
-        </div>
-
-
-    </section>
+    </a>
 
 
 </main>
@@ -776,8 +721,6 @@
      LIGHTBOXES
 ========================================= -->
 
-
-<!-- IMAGE 1 -->
 
 <div id="img1" class="lightbox">
 
@@ -791,9 +734,6 @@
 </div>
 
 
-
-<!-- IMAGE 2 -->
-
 <div id="img2" class="lightbox">
 
     <a href="#" class="lightbox-close">
@@ -805,9 +745,6 @@
 
 </div>
 
-
-
-<!-- IMAGE 3 -->
 
 <div id="img3" class="lightbox">
 
@@ -821,9 +758,6 @@
 </div>
 
 
-
-<!-- IMAGE 4 -->
-
 <div id="img4" class="lightbox">
 
     <a href="#" class="lightbox-close">
@@ -835,9 +769,6 @@
 
 </div>
 
-
-
-<!-- IMAGE 5 -->
 
 <div id="img5" class="lightbox">
 
@@ -851,9 +782,6 @@
 </div>
 
 
-
-<!-- IMAGE 6 -->
-
 <div id="img6" class="lightbox">
 
     <a href="#" class="lightbox-close">
@@ -865,9 +793,6 @@
 
 </div>
 
-
-
-<!-- IMAGE 7 -->
 
 <div id="img7" class="lightbox">
 
@@ -881,9 +806,6 @@
 </div>
 
 
-
-<!-- IMAGE 8 -->
-
 <div id="img8" class="lightbox">
 
     <a href="#" class="lightbox-close">
@@ -895,9 +817,6 @@
 
 </div>
 
-
-
-<!-- IMAGE 9 -->
 
 <div id="img9" class="lightbox">
 
@@ -911,9 +830,6 @@
 </div>
 
 
-
-<!-- IMAGE 10 -->
-
 <div id="img10" class="lightbox">
 
     <a href="#" class="lightbox-close">
@@ -926,9 +842,6 @@
 </div>
 
 
-
-<!-- IMAGE 11 -->
-
 <div id="img11" class="lightbox">
 
     <a href="#" class="lightbox-close">
@@ -940,9 +853,6 @@
 
 </div>
 
-
-
-<!-- IMAGE 12 -->
 
 <div id="img12" class="lightbox">
 
