@@ -10,7 +10,7 @@
 
     <link rel="icon" href="logo.png" type="image/png">
 
-    <!-- Fonts -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
 
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=Oswald:wght@500;600&display=swap"
@@ -23,9 +23,9 @@
 
     <style>
 
-        /* =========================
+        /* =========================================
            RESET
-        ========================= */
+        ========================================= */
 
         * {
             margin: 0;
@@ -33,9 +33,11 @@
             box-sizing: border-box;
         }
 
+
         html {
             scroll-behavior: smooth;
         }
+
 
         body {
             font-family: 'DM Sans', sans-serif;
@@ -44,11 +46,12 @@
         }
 
 
-        /* =========================
+        /* =========================================
            HEADER
-        ========================= */
+        ========================================= */
 
         header {
+
             position: sticky;
             top: 0;
 
@@ -61,27 +64,37 @@
             padding: 0 50px;
 
             background: #000;
+
             border-bottom: 1px solid #151515;
 
             z-index: 1000;
         }
 
+
         .nav-left,
         .nav-right {
+
             display: flex;
+
             align-items: center;
+
             gap: 25px;
         }
 
+
         .nav-left a,
         .nav-right a {
+
             font-family: 'DM Sans', sans-serif;
+
             font-weight: 500;
 
             letter-spacing: 1px;
+
             font-size: 16px;
 
             text-decoration: none;
+
             color: #fff;
 
             padding-bottom: 3px;
@@ -91,16 +104,22 @@
                 border-bottom 0.3s ease;
         }
 
+
         .nav-left a.active {
+
             border-bottom: 2px solid #fff;
         }
 
+
         .nav-left a:hover,
         .nav-right a:hover {
+
             opacity: 0.55;
         }
 
+
         .logo {
+
             position: absolute;
 
             left: 50%;
@@ -108,22 +127,31 @@
             transform: translateX(-50%);
 
             font-family: 'Oswald', sans-serif;
+
             font-weight: 600;
 
             letter-spacing: 2px;
+
             font-size: 20px;
 
             white-space: nowrap;
         }
 
+
         .nav-right a i {
+
             font-size: 18px;
         }
 
 
-        /* =========================
-           PHOTO SECTIONS
-        ========================= */
+        /* =========================================
+           TWO MAIN COLUMNS
+
+           PERSONAL        THE REVIEW
+           ========================================
+           | photos |      | photos |
+           | photos |      | photos |
+        ========================================= */
 
         .photo-columns {
 
@@ -137,7 +165,12 @@
         }
 
 
+        /* =========================================
+           SECTION TITLES
+        ========================================= */
+
         .photo-section {
+
             min-width: 0;
         }
 
@@ -158,9 +191,9 @@
         }
 
 
-        /* =========================
-           STAGGERED PHOTO GRID
-        ========================= */
+        /* =========================================
+           STAGGERED / MASONRY PHOTOS
+        ========================================= */
 
         .photo-masonry {
 
@@ -208,9 +241,9 @@
         }
 
 
-        /* =========================
+        /* =========================================
            LIGHTBOX
-        ========================= */
+        ========================================= */
 
         .lightbox {
 
@@ -227,6 +260,7 @@
             display: none;
 
             justify-content: center;
+
             align-items: center;
 
             padding: 50px;
@@ -262,6 +296,7 @@
             position: absolute;
 
             top: 20px;
+
             right: 30px;
 
             color: #fff;
@@ -284,9 +319,9 @@
         }
 
 
-        /* =========================
+        /* =========================================
            TABLET
-        ========================= */
+        ========================================= */
 
         @media (max-width: 1000px) {
 
@@ -303,18 +338,12 @@
                 padding: 20px;
             }
 
-
-            .photo-masonry {
-
-                column-count: 2;
-            }
-
         }
 
 
-        /* =========================
+        /* =========================================
            MOBILE
-        ========================= */
+        ========================================= */
 
         @media (max-width: 800px) {
 
@@ -360,7 +389,10 @@
             }
 
 
-            /* Stack Personal and Review */
+            /*
+             * Personal and The Review
+             * stack vertically on mobile.
+             */
 
             .photo-columns {
 
@@ -373,9 +405,9 @@
 
 
             /*
-               Keep TWO staggered photo
-               columns inside each section.
-            */
+             * Personal still has TWO
+             * staggered photo columns.
+             */
 
             .photo-masonry {
 
@@ -409,9 +441,9 @@
         }
 
 
-        /* =========================
-           SMALL PHONES
-        ========================= */
+        /* =========================================
+           VERY SMALL PHONES
+        ========================================= */
 
         @media (max-width: 450px) {
 
@@ -435,13 +467,15 @@
 
 
             /*
-               One photo per row on
-               very small screens.
-            */
+             * Keep two photo columns even
+             * on small phones.
+             */
 
             .photo-masonry {
 
-                column-count: 1;
+                column-count: 2;
+
+                column-gap: 8px;
             }
 
 
@@ -460,372 +494,466 @@
 <body>
 
 
-    <!-- =========================
-         HEADER
-    ========================== -->
+<!-- =========================================
+     HEADER
+========================================= -->
 
-    <header>
+<header>
 
-        <nav class="nav-left">
 
-            <a href="index.html">
-                Welcome
+    <nav class="nav-left">
+
+        <a href="index.html">
+            Welcome
+        </a>
+
+
+        <a href="photography.html" class="active">
+            Photography
+        </a>
+
+
+        <a href="projects.html">
+            Projects
+        </a>
+
+
+        <a href="about.html">
+            About
+        </a>
+
+    </nav>
+
+
+    <div class="logo">
+        LILI FREESE
+    </div>
+
+
+    <nav class="nav-right">
+
+
+        <a href="https://instagram.com/lilifreesephoto"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="Instagram">
+
+            <i class="fab fa-instagram"></i>
+
+        </a>
+
+
+        <a href="https://linkedin.com/in/lilifreese"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="LinkedIn">
+
+            <i class="fab fa-linkedin"></i>
+
+        </a>
+
+
+        <a href="mailto:lilifreese@gmail.com"
+           aria-label="Email">
+
+            <i class="fas fa-envelope"></i>
+
+        </a>
+
+
+    </nav>
+
+
+</header>
+
+
+
+<!-- =========================================
+     PHOTO SECTIONS
+========================================= -->
+
+<main class="photo-columns">
+
+
+    <!-- =====================================
+         PERSONAL
+
+         ALL 12 EXISTING PHOTOS
+    ====================================== -->
+
+    <section class="photo-section">
+
+
+        <h2>
+            Personal
+        </h2>
+
+
+        <div class="photo-masonry">
+
+
+            <!-- PHOTO 1 -->
+
+            <a href="#img1">
+
+                <img src="images/strip.JPG"
+                     alt="Las Vegas city view"
+                     loading="lazy">
+
             </a>
 
-            <a href="photography.html" class="active">
-                Photography
+
+            <!-- PHOTO 2 -->
+
+            <a href="#img2">
+
+                <img src="images/squirrel.JPG"
+                     alt="Squirrel on a rock"
+                     loading="lazy">
+
             </a>
 
-            <a href="projects.html">
-                Projects
+
+            <!-- PHOTO 3 -->
+
+            <a href="#img3">
+
+                <img src="images/brycecanyon.JPG"
+                     alt="Bryce Canyon landscape"
+                     loading="lazy">
+
             </a>
 
-            <a href="about.html">
-                About
+
+            <!-- PHOTO 4 -->
+
+            <a href="#img4">
+
+                <img src="images/newarkres.JPG"
+                     alt="Sunset over river"
+                     loading="lazy">
+
             </a>
 
-        </nav>
+
+            <!-- PHOTO 5 -->
+
+            <a href="#img5">
+
+                <img src="images/grandcanyon.JPG"
+                     alt="Grand Canyon landscape"
+                     loading="lazy">
+
+            </a>
 
 
-        <div class="logo">
-            LILI FREESE
+            <!-- PHOTO 6 -->
+
+            <a href="#img6">
+
+                <img src="images/horeshoebend.JPG"
+                     alt="Horseshoe Bend"
+                     loading="lazy">
+
+            </a>
+
+
+            <!-- PHOTO 7 -->
+
+            <a href="#img7">
+
+                <img src="images/cactus.JPG"
+                     alt="Cactus desert plants"
+                     loading="lazy">
+
+            </a>
+
+
+            <!-- PHOTO 8 -->
+
+            <a href="#img8">
+
+                <img src="images/zion1.JPG"
+                     alt="Zion cliffs closeup"
+                     loading="lazy">
+
+            </a>
+
+
+            <!-- PHOTO 9 -->
+
+            <a href="#img9">
+
+                <img src="images/zion2.JPG"
+                     alt="Zion landscape"
+                     loading="lazy">
+
+            </a>
+
+
+            <!-- PHOTO 10 -->
+
+            <a href="#img10">
+
+                <img src="images/inside.JPG"
+                     alt="Night city lights"
+                     loading="lazy">
+
+            </a>
+
+
+            <!-- PHOTO 11 -->
+
+            <a href="#img11">
+
+                <img src="images/zion3.JPG"
+                     alt="Zion rock formations"
+                     loading="lazy">
+
+            </a>
+
+
+            <!-- PHOTO 12 -->
+
+            <a href="#img12">
+
+                <img src="images/flower.JPG"
+                     alt="Flower closeup"
+                     loading="lazy">
+
+            </a>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================
+         THE REVIEW
+
+         EMPTY FOR NOW
+    ====================================== -->
+
+    <section class="photo-section">
+
+
+        <h2>
+            The Review
+        </h2>
+
+
+        <div class="photo-masonry">
+
+            <!--
+
+                REVIEW PHOTOS GO HERE.
+
+                Example:
+
+                <a href="#review1">
+
+                    <img src="images/review1.JPG"
+                         alt="Review photograph"
+                         loading="lazy">
+
+                </a>
+
+            -->
+
         </div>
 
 
-        <nav class="nav-right">
+    </section>
 
-            <a href="https://instagram.com/lilifreesephoto"
-               target="_blank"
-               rel="noopener noreferrer"
-               aria-label="Instagram">
 
-                <i class="fab fa-instagram"></i>
+</main>
 
-            </a>
 
 
-            <a href="https://linkedin.com/in/lilifreese"
-               target="_blank"
-               rel="noopener noreferrer"
-               aria-label="LinkedIn">
+<!-- =========================================
+     LIGHTBOXES
+========================================= -->
 
-                <i class="fab fa-linkedin"></i>
 
-            </a>
+<!-- IMAGE 1 -->
 
+<div id="img1" class="lightbox">
 
-            <a href="mailto:lilifreese@gmail.com"
-               aria-label="Email">
+    <a href="#" class="lightbox-close">
+        &times;
+    </a>
 
-                <i class="fas fa-envelope"></i>
+    <img src="images/strip.JPG"
+         alt="Las Vegas city view">
 
-            </a>
+</div>
 
-        </nav>
 
-    </header>
 
+<!-- IMAGE 2 -->
 
+<div id="img2" class="lightbox">
 
-    <!-- =========================
-         PHOTO GALLERY
-    ========================== -->
+    <a href="#" class="lightbox-close">
+        &times;
+    </a>
 
-    <main class="photo-columns">
+    <img src="images/squirrel.JPG"
+         alt="Squirrel on a rock">
 
+</div>
 
-        <!-- =====================
-             PERSONAL
-        ====================== -->
 
-        <section class="photo-section">
 
-            <h2>Personal</h2>
+<!-- IMAGE 3 -->
 
+<div id="img3" class="lightbox">
 
-            <div class="photo-masonry">
+    <a href="#" class="lightbox-close">
+        &times;
+    </a>
 
+    <img src="images/brycecanyon.JPG"
+         alt="Bryce Canyon landscape">
 
-                <a href="#img1">
+</div>
 
-                    <img src="images/web/strip.webp"
-                         alt="Las Vegas city view"
-                         loading="lazy">
 
-                </a>
 
+<!-- IMAGE 4 -->
 
-                <a href="#img2">
+<div id="img4" class="lightbox">
 
-                    <img src="images/web/squirrel.webp"
-                         alt="Squirrel on a rock"
-                         loading="lazy">
+    <a href="#" class="lightbox-close">
+        &times;
+    </a>
 
-                </a>
+    <img src="images/newarkres.JPG"
+         alt="Sunset over river">
 
+</div>
 
-                <a href="#img3">
 
-                    <img src="images/web/brycecanyon.webp"
-                         alt="Bryce Canyon landscape"
-                         loading="lazy">
 
-                </a>
+<!-- IMAGE 5 -->
 
+<div id="img5" class="lightbox">
 
-                <a href="#img4">
+    <a href="#" class="lightbox-close">
+        &times;
+    </a>
 
-                    <img src="images/web/newarkres.webp"
-                         alt="Sunset over river"
-                         loading="lazy">
+    <img src="images/grandcanyon.JPG"
+         alt="Grand Canyon landscape">
 
-                </a>
+</div>
 
 
-                <a href="#img5">
 
-                    <img src="images/web/grandcanyon.webp"
-                         alt="Grand Canyon landscape"
-                         loading="lazy">
+<!-- IMAGE 6 -->
 
-                </a>
+<div id="img6" class="lightbox">
 
+    <a href="#" class="lightbox-close">
+        &times;
+    </a>
 
-                <a href="#img6">
+    <img src="images/horeshoebend.JPG"
+         alt="Horseshoe Bend">
 
-                    <img src="images/web/horeshoebend.webp"
-                         alt="Horseshoe Bend"
-                         loading="lazy">
+</div>
 
-                </a>
 
-            </div>
 
-        </section>
+<!-- IMAGE 7 -->
 
+<div id="img7" class="lightbox">
 
+    <a href="#" class="lightbox-close">
+        &times;
+    </a>
 
-        <!-- =====================
-             THE REVIEW
-        ====================== -->
+    <img src="images/cactus.JPG"
+         alt="Cactus desert plants">
 
-        <section class="photo-section">
+</div>
 
-            <h2>The Review</h2>
 
 
-            <div class="photo-masonry">
+<!-- IMAGE 8 -->
 
+<div id="img8" class="lightbox">
 
-                <a href="#img7">
+    <a href="#" class="lightbox-close">
+        &times;
+    </a>
 
-                    <img src="images/web/cactus.webp"
-                         alt="Cactus desert plants"
-                         loading="lazy">
+    <img src="images/zion1.JPG"
+         alt="Zion cliffs closeup">
 
-                </a>
+</div>
 
 
-                <a href="#img8">
 
-                    <img src="images/web/zion1.webp"
-                         alt="Zion cliffs closeup"
-                         loading="lazy">
+<!-- IMAGE 9 -->
 
-                </a>
+<div id="img9" class="lightbox">
 
+    <a href="#" class="lightbox-close">
+        &times;
+    </a>
 
-                <a href="#img9">
+    <img src="images/zion2.JPG"
+         alt="Zion landscape">
 
-                    <img src="images/web/zion2.webp"
-                         alt="Zion landscape"
-                         loading="lazy">
+</div>
 
-                </a>
 
 
-                <a href="#img10">
+<!-- IMAGE 10 -->
 
-                    <img src="images/web/inside.webp"
-                         alt="Night city lights"
-                         loading="lazy">
+<div id="img10" class="lightbox">
 
-                </a>
+    <a href="#" class="lightbox-close">
+        &times;
+    </a>
 
+    <img src="images/inside.JPG"
+         alt="Night city lights">
 
-                <a href="#img11">
+</div>
 
-                    <img src="images/web/zion3.webp"
-                         alt="Zion rock formations"
-                         loading="lazy">
 
-                </a>
 
+<!-- IMAGE 11 -->
 
-                <a href="#img12">
+<div id="img11" class="lightbox">
 
-                    <img src="images/web/flower.webp"
-                         alt="Flower closeup"
-                         loading="lazy">
+    <a href="#" class="lightbox-close">
+        &times;
+    </a>
 
-                </a>
+    <img src="images/zion3.JPG"
+         alt="Zion rock formations">
 
-            </div>
+</div>
 
-        </section>
 
-    </main>
 
+<!-- IMAGE 12 -->
 
+<div id="img12" class="lightbox">
 
-    <!-- =========================
-         LIGHTBOXES
-         Full-resolution originals
-    ========================== -->
+    <a href="#" class="lightbox-close">
+        &times;
+    </a>
 
+    <img src="images/flower.JPG"
+         alt="Flower closeup">
 
-    <div id="img1" class="lightbox">
-
-        <a href="#" class="lightbox-close">
-            &times;
-        </a>
-
-        <img src="images/strip.JPG"
-             alt="Las Vegas city view">
-
-    </div>
-
-
-    <div id="img2" class="lightbox">
-
-        <a href="#" class="lightbox-close">
-            &times;
-        </a>
-
-        <img src="images/squirrel.JPG"
-             alt="Squirrel on a rock">
-
-    </div>
-
-
-    <div id="img3" class="lightbox">
-
-        <a href="#" class="lightbox-close">
-            &times;
-        </a>
-
-        <img src="images/brycecanyon.JPG"
-             alt="Bryce Canyon landscape">
-
-    </div>
-
-
-    <div id="img4" class="lightbox">
-
-        <a href="#" class="lightbox-close">
-            &times;
-        </a>
-
-        <img src="images/newarkres.JPG"
-             alt="Sunset over river">
-
-    </div>
-
-
-    <div id="img5" class="lightbox">
-
-        <a href="#" class="lightbox-close">
-            &times;
-        </a>
-
-        <img src="images/grandcanyon.JPG"
-             alt="Grand Canyon landscape">
-
-    </div>
-
-
-    <div id="img6" class="lightbox">
-
-        <a href="#" class="lightbox-close">
-            &times;
-        </a>
-
-        <img src="images/horeshoebend.JPG"
-             alt="Horseshoe Bend">
-
-    </div>
-
-
-    <div id="img7" class="lightbox">
-
-        <a href="#" class="lightbox-close">
-            &times;
-        </a>
-
-        <img src="images/cactus.JPG"
-             alt="Cactus desert plants">
-
-    </div>
-
-
-    <div id="img8" class="lightbox">
-
-        <a href="#" class="lightbox-close">
-            &times;
-        </a>
-
-        <img src="images/zion1.JPG"
-             alt="Zion cliffs closeup">
-
-    </div>
-
-
-    <div id="img9" class="lightbox">
-
-        <a href="#" class="lightbox-close">
-            &times;
-        </a>
-
-        <img src="images/zion2.JPG"
-             alt="Zion landscape">
-
-    </div>
-
-
-    <div id="img10" class="lightbox">
-
-        <a href="#" class="lightbox-close">
-            &times;
-        </a>
-
-        <img src="images/inside.JPG"
-             alt="Night city lights">
-
-    </div>
-
-
-    <div id="img11" class="lightbox">
-
-        <a href="#" class="lightbox-close">
-            &times;
-        </a>
-
-        <img src="images/zion3.JPG"
-             alt="Zion rock formations">
-
-    </div>
-
-
-    <div id="img12" class="lightbox">
-
-        <a href="#" class="lightbox-close">
-            &times;
-        </a>
-
-        <img src="images/flower.JPG"
-             alt="Flower closeup">
-
-    </div>
+</div>
 
 
 </body>
