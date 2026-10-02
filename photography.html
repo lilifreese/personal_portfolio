@@ -41,22 +41,27 @@
 
         body {
             font-family: 'DM Sans', sans-serif;
+
             background: #000;
+
             color: #fff;
         }
 
 
         /* =========================================
-           MAIN HEADER
+           HEADER
         ========================================= */
 
         header {
 
             position: sticky;
+
             top: 0;
 
             display: flex;
+
             justify-content: space-between;
+
             align-items: center;
 
             height: 80px;
@@ -75,7 +80,9 @@
         .nav-right {
 
             display: flex;
+
             align-items: center;
+
             gap: 25px;
         }
 
@@ -143,7 +150,7 @@
 
 
         /* =========================================
-           PHOTOGRAPHY SUB-NAVIGATION
+           PHOTOGRAPHY SUB TABS
         ========================================= */
 
         .photo-nav {
@@ -199,7 +206,7 @@
 
 
         /* =========================================
-           PHOTO GALLERY
+           PERSONAL PHOTO GALLERY
         ========================================= */
 
         .masonry {
@@ -251,6 +258,38 @@
 
 
         /* =========================================
+           COMING SOON
+        ========================================= */
+
+        .coming-soon {
+
+            min-height: calc(100vh - 130px);
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            text-align: center;
+
+            padding: 30px;
+        }
+
+
+        .coming-soon h1 {
+
+            font-family: 'Oswald', sans-serif;
+
+            font-size: 42px;
+
+            font-weight: 500;
+
+            letter-spacing: 4px;
+        }
+
+
+        /* =========================================
            LIGHTBOX
         ========================================= */
 
@@ -259,9 +298,11 @@
             position: fixed;
 
             top: 0;
+
             left: 0;
 
             width: 100%;
+
             height: 100%;
 
             background: rgba(0, 0, 0, 0.94);
@@ -396,8 +437,6 @@
             }
 
 
-            /* Sub-navigation */
-
             .photo-nav {
 
                 gap: 20px;
@@ -411,8 +450,6 @@
                 font-size: 13px;
             }
 
-
-            /* One masonry column */
 
             .masonry {
 
@@ -439,6 +476,14 @@
                 max-width: 95vw;
 
                 max-height: 85vh;
+            }
+
+
+            .coming-soon h1 {
+
+                font-size: 32px;
+
+                letter-spacing: 3px;
             }
 
         }
@@ -505,10 +550,13 @@
         </a>
 
 
-        <!-- Clicking Photography always opens Personal -->
+        <!-- Always opens Personal -->
 
-        <a href="photography.html" class="active">
+        <a href="photography.html#personal"
+           class="active">
+
             Photography
+
         </a>
 
 
@@ -575,17 +623,16 @@
 <nav class="photo-nav">
 
 
-    <!-- Personal is the default -->
-
-    <a href="photography.html"
-       class="active">
+    <a href="#personal"
+       id="personal-tab">
 
         Personal
 
     </a>
 
 
-    <a href="review.html">
+    <a href="#review"
+       id="review-tab">
 
         The Review
 
@@ -597,123 +644,146 @@
 
 
 <!-- =========================================
-     PERSONAL PHOTOGRAPHY
-
-     ORIGINAL 3-COLUMN MASONRY LAYOUT
+     PERSONAL
 ========================================= -->
 
-<main class="masonry">
+<section id="personal">
 
 
-    <a href="#img1">
-
-        <img src="images/strip.JPG"
-             alt="Las Vegas city view"
-             loading="lazy">
-
-    </a>
+    <main class="masonry">
 
 
-    <a href="#img2">
+        <a href="#img1">
 
-        <img src="images/squirrel.JPG"
-             alt="Squirrel on a rock"
-             loading="lazy">
+            <img src="images/strip.JPG"
+                 alt="Las Vegas city view"
+                 loading="lazy">
 
-    </a>
-
-
-    <a href="#img3">
-
-        <img src="images/brycecanyon.JPG"
-             alt="Bryce Canyon landscape"
-             loading="lazy">
-
-    </a>
+        </a>
 
 
-    <a href="#img4">
+        <a href="#img2">
 
-        <img src="images/newarkres.JPG"
-             alt="Sunset over river"
-             loading="lazy">
+            <img src="images/squirrel.JPG"
+                 alt="Squirrel on a rock"
+                 loading="lazy">
 
-    </a>
-
-
-    <a href="#img5">
-
-        <img src="images/grandcanyon.JPG"
-             alt="Grand Canyon landscape"
-             loading="lazy">
-
-    </a>
+        </a>
 
 
-    <a href="#img6">
+        <a href="#img3">
 
-        <img src="images/horeshoebend.JPG"
-             alt="Horseshoe Bend"
-             loading="lazy">
+            <img src="images/brycecanyon.JPG"
+                 alt="Bryce Canyon landscape"
+                 loading="lazy">
 
-    </a>
-
-
-    <a href="#img7">
-
-        <img src="images/cactus.JPG"
-             alt="Cactus desert plants"
-             loading="lazy">
-
-    </a>
+        </a>
 
 
-    <a href="#img8">
+        <a href="#img4">
 
-        <img src="images/zion1.JPG"
-             alt="Zion cliffs closeup"
-             loading="lazy">
+            <img src="images/newarkres.JPG"
+                 alt="Sunset over river"
+                 loading="lazy">
 
-    </a>
-
-
-    <a href="#img9">
-
-        <img src="images/zion2.JPG"
-             alt="Zion landscape"
-             loading="lazy">
-
-    </a>
+        </a>
 
 
-    <a href="#img10">
+        <a href="#img5">
 
-        <img src="images/inside.JPG"
-             alt="Night city lights"
-             loading="lazy">
+            <img src="images/grandcanyon.JPG"
+                 alt="Grand Canyon landscape"
+                 loading="lazy">
 
-    </a>
-
-
-    <a href="#img11">
-
-        <img src="images/zion3.JPG"
-             alt="Zion rock formations"
-             loading="lazy">
-
-    </a>
+        </a>
 
 
-    <a href="#img12">
+        <a href="#img6">
 
-        <img src="images/flower.JPG"
-             alt="Flower closeup"
-             loading="lazy">
+            <img src="images/horeshoebend.JPG"
+                 alt="Horseshoe Bend"
+                 loading="lazy">
 
-    </a>
+        </a>
 
 
-</main>
+        <a href="#img7">
+
+            <img src="images/cactus.JPG"
+                 alt="Cactus desert plants"
+                 loading="lazy">
+
+        </a>
+
+
+        <a href="#img8">
+
+            <img src="images/zion1.JPG"
+                 alt="Zion cliffs closeup"
+                 loading="lazy">
+
+        </a>
+
+
+        <a href="#img9">
+
+            <img src="images/zion2.JPG"
+                 alt="Zion landscape"
+                 loading="lazy">
+
+        </a>
+
+
+        <a href="#img10">
+
+            <img src="images/inside.JPG"
+                 alt="Night city lights"
+                 loading="lazy">
+
+        </a>
+
+
+        <a href="#img11">
+
+            <img src="images/zion3.JPG"
+                 alt="Zion rock formations"
+                 loading="lazy">
+
+        </a>
+
+
+        <a href="#img12">
+
+            <img src="images/flower.JPG"
+                 alt="Flower closeup"
+                 loading="lazy">
+
+        </a>
+
+
+    </main>
+
+</section>
+
+
+
+<!-- =========================================
+     THE REVIEW
+========================================= -->
+
+<section id="review">
+
+
+    <main class="coming-soon">
+
+        <h1>
+            COMING SOON
+        </h1>
+
+    </main>
+
+
+</section>
 
 
 
@@ -724,7 +794,7 @@
 
 <div id="img1" class="lightbox">
 
-    <a href="#" class="lightbox-close">
+    <a href="#personal" class="lightbox-close">
         &times;
     </a>
 
@@ -736,7 +806,7 @@
 
 <div id="img2" class="lightbox">
 
-    <a href="#" class="lightbox-close">
+    <a href="#personal" class="lightbox-close">
         &times;
     </a>
 
@@ -748,7 +818,7 @@
 
 <div id="img3" class="lightbox">
 
-    <a href="#" class="lightbox-close">
+    <a href="#personal" class="lightbox-close">
         &times;
     </a>
 
@@ -760,7 +830,7 @@
 
 <div id="img4" class="lightbox">
 
-    <a href="#" class="lightbox-close">
+    <a href="#personal" class="lightbox-close">
         &times;
     </a>
 
@@ -772,7 +842,7 @@
 
 <div id="img5" class="lightbox">
 
-    <a href="#" class="lightbox-close">
+    <a href="#personal" class="lightbox-close">
         &times;
     </a>
 
@@ -784,7 +854,7 @@
 
 <div id="img6" class="lightbox">
 
-    <a href="#" class="lightbox-close">
+    <a href="#personal" class="lightbox-close">
         &times;
     </a>
 
@@ -796,7 +866,7 @@
 
 <div id="img7" class="lightbox">
 
-    <a href="#" class="lightbox-close">
+    <a href="#personal" class="lightbox-close">
         &times;
     </a>
 
@@ -808,7 +878,7 @@
 
 <div id="img8" class="lightbox">
 
-    <a href="#" class="lightbox-close">
+    <a href="#personal" class="lightbox-close">
         &times;
     </a>
 
@@ -820,7 +890,7 @@
 
 <div id="img9" class="lightbox">
 
-    <a href="#" class="lightbox-close">
+    <a href="#personal" class="lightbox-close">
         &times;
     </a>
 
@@ -832,7 +902,7 @@
 
 <div id="img10" class="lightbox">
 
-    <a href="#" class="lightbox-close">
+    <a href="#personal" class="lightbox-close">
         &times;
     </a>
 
@@ -844,7 +914,7 @@
 
 <div id="img11" class="lightbox">
 
-    <a href="#" class="lightbox-close">
+    <a href="#personal" class="lightbox-close">
         &times;
     </a>
 
@@ -856,7 +926,7 @@
 
 <div id="img12" class="lightbox">
 
-    <a href="#" class="lightbox-close">
+    <a href="#personal" class="lightbox-close">
         &times;
     </a>
 
@@ -864,6 +934,71 @@
          alt="Flower closeup">
 
 </div>
+
+
+
+<!-- =========================================
+     TAB SWITCHING
+========================================= -->
+
+<script>
+
+    const personalSection = document.getElementById('personal');
+    const reviewSection = document.getElementById('review');
+
+    const personalTab = document.getElementById('personal-tab');
+    const reviewTab = document.getElementById('review-tab');
+
+
+    function showTab() {
+
+        /*
+         * If the URL contains #review,
+         * show The Review.
+         *
+         * Otherwise show Personal.
+         */
+
+        if (window.location.hash === '#review') {
+
+            personalSection.style.display = 'none';
+
+            reviewSection.style.display = 'block';
+
+            personalTab.classList.remove('active');
+
+            reviewTab.classList.add('active');
+
+        } else {
+
+            personalSection.style.display = 'block';
+
+            reviewSection.style.display = 'none';
+
+            personalTab.classList.add('active');
+
+            reviewTab.classList.remove('active');
+
+        }
+
+    }
+
+
+    /*
+     * Run when the page first loads.
+     */
+
+    showTab();
+
+
+    /*
+     * Run whenever someone clicks
+     * Personal or The Review.
+     */
+
+    window.addEventListener('hashchange', showTab);
+
+</script>
 
 
 </body>
